@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles onfiguration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd"
+>
+<tiles-definitions>
+	<definition name="template_admin" template="/WEB-INF/views/templates/template_admin.jsp">
+		<put-attribute name="content"></put-attribute>
+	</definition>
+	
+	<!-- Admin Pages -->
+	<definition name="admin.index" extends="template_admin">
+		<put-attribute name="content" value="/WEB-INF/views/admin/index.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="admin.profile" extends="template_admin">
+		<put-attribute name="content" value="/WEB-INF/views/admin/profile.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles onfiguration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd"
+>
+<tiles-definitions>
+	<definition name="template_user" template="/WEB-INF/views/templates/template_user.jsp">
+		<put-attribute name="content"></put-attribute>
+	</definition>
+	
+	<definition name="user.index" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/index.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user.about" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/about.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user.contact" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/contact.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user.profile" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/profile.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user.shop" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/shop.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user.product_details" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/product_details.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user.profile" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/user/profile.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Access Denied  -->
+	<definition name="user.access_denied" extends="template_user">
+		<put-attribute name="content" value="/WEB-INF/views/account/access_denied.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

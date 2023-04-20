@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles onfiguration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd"
+>
+<tiles-definitions>
+
+	<definition name="template_empty" template="/WEB-INF/views/templates/template_empty.jsp">
+		<put-attribute name="content"></put-attribute>
+	</definition>
+	
+	<!-- Authentication Pages -->
+	<definition name="account.login" extends="template_empty">
+		<put-attribute name="content" value="/WEB-INF/views/account/login.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="account.register" extends="template_empty">
+		<put-attribute name="content" value="/WEB-INF/views/account/register.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="account.forgot_password" extends="template_empty">
+		<put-attribute name="content" value="/WEB-INF/views/account/forgot_password.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
