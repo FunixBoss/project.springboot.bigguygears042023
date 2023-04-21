@@ -96,3 +96,18 @@ VALUES
 (24,'desktop/img24.png',GETDATE(),GETDATE()),
 (25,'desktop/img25.png',GETDATE(),GETDATE())
 GO
+
+
+INSERT INTO Order_Status
+VALUES (N'Pending', N'When an order is created and has not been processed or confirmed by the customer.'),
+(N'Processing', N'When the order has been confirmed and is being processed by the store''s staff.'),
+(N'Shipped', N'Once the order has been packed and shipped to the carrier for delivery to the customer.'),
+(N'Delivered', N'When the order has been successfully delivered to the customer.'),
+(N'Cancelled', N'When an order is canceled by a customer or store employee for some reason.')
+GO
+
+INSERT INTO Invoice_Status 
+VALUES (N'Pending', N'Unpaid or pending invoice.'), 
+(N'Paid', N' Invoice has been paid successfully.'),
+(N'Failed', N'Bill payment failed.')
+GO
