@@ -1,7 +1,7 @@
 ﻿USE BigGuyGear 
 GO
 
-INSERT INTO Roles(name) 
+INSERT INTO [Role](name) 
 VALUES
 ('admin'),
 ('member')

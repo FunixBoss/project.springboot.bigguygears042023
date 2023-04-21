@@ -43,19 +43,6 @@ CREATE TABLE Category (
 )
 GO
 
-DROP TABLE IF EXISTS Vendor
-CREATE TABLE Vendor (
-  vendor_id INT PRIMARY KEY IDENTITY,
-  vendor_name NVARCHAR(50) NOT NULL,
-  contact_person_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  phone_number VARCHAR(20) NOT NULL,
-  [address] VARCHAR(255) NOT NULL,
-  created_at DATETIME NOT NULL DEFAULT GETDATE(),
-  updated_at DATETIME NOT NULL DEFAULT GETDATE()
-)
-GO
-
 DROP TABLE IF EXISTS Brand
 CREATE TABLE Brand (
   brand_id INT PRIMARY KEY IDENTITY,
@@ -78,12 +65,10 @@ CREATE TABLE Product (
   description TEXT,
   price DECIMAL(18, 2) NOT NULL,
   brand_id INT NOT NULL,
-  vendor_id INT NOT NULL,
   category_id INT NOT NULL,
   created_at DATETIME NOT NULL DEFAULT GETDATE(),
   updated_at DATETIME NOT NULL DEFAULT GETDATE()
   FOREIGN KEY (brand_id) REFERENCES Brand(brand_id),
-  FOREIGN KEY (vendor_id) REFERENCES Vendor(vendor_id),
   FOREIGN KEY (category_id) REFERENCES Category(category_id)
 )
 GO
@@ -137,7 +122,7 @@ GO
 
 DROP TABLE IF EXISTS Cart_Detail
 CREATE TABLE Cart_Detail (
-	cart_id INT NOT NULL,
+	cart_id INT PRIMARY KEY IDENTITY,
 	product_id INT NOT NULL,
 	quantity INT NOT NULL,
 	price DECIMAL(18,2) NOT NULL,
@@ -168,6 +153,17 @@ CREATE TABLE Coupon (
 	created_at DATETIME NOT NULL DEFAULT GETDATE(),
 	expired_at DATETIME NOT NULL,
 	FOREIGN KEY (coupon_type_id) REFERENCES Coupon_Type(coupon_type_id)
+)
+GO
+
+DROP TABLE IF EXISTS Account_Coupon
+CREATE TABLE Account_Coupon(
+	coupon_id INT,
+	account_id INT,
+	is_used BIT NOT NULL, 
+	PRIMARY KEY (coupon_id, account_id),
+	FOREIGN KEY (coupon_id) REFERENCES Coupon(coupon_id),
+	FOREIGN KEY (account_id) REFERENCES Account(account_id)
 )
 GO
 
