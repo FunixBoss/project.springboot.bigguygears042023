@@ -1,104 +1,15 @@
 ﻿USE BigGuyGear 
 GO
 
-INSERT INTO [Role](name) 
+/*
+INSERT INTO [Role]
 VALUES
-('admin'),
-('member')
+('ROLE_SUPERADMIN'),
+('ROLE_ADMIN'),
+('CUSTOMER')
 GO
 
-INSERT INTO Users (username, password, full_name, email, phone_number, address, role_id, created_at, updated_at)
-VALUES
-('admin1', '123456789', 'ADMIN', 'admin@gmail.com', '123-456-7890', '123 Main St', 1, GETDATE(), GETDATE()),
-('admin2', '123456789', 'ADMIN', 'manhphu@gmail.com', '123-456-7890', '123 Main St', 1, GETDATE(), GETDATE()),
-('admin3', '123456789', 'ADMIN', 'nguyenphu@gmail.com', '123-456-7890', '123 Main St', 1, GETDATE(), GETDATE()),
-('admin4', '123456789', 'ADMIN', 'phunguyen@gmail.com', '123-456-7890', '123 Main St', 1, GETDATE(), GETDATE()),
-('admin5', '123456789', 'ADMIN', 'nguyenmanhphu@gmail.com', '123-456-7890', '123 Main St', 1, GETDATE(), GETDATE()),
-('user1', '123456789', 'Jane Smith', 'jane.smith@example.com', '234-567-8901', '456 Oak Ave', 2, GETDATE(), GETDATE()),
-('user2', '123456789', 'Pen Theion', 'penten.smith@example.com', '234-567-8901', '456 Oak Ave', 2, GETDATE(), GETDATE()),
-('user3', '123456789', 'Bob Johnson', 'bob.johnson@example.com', '345-678-9012', '789 Pine St', 2, GETDATE(), GETDATE()),
-('user4', 'password4', 'Alice Lee', 'alice.lee@example.com', '456-789-0123', '987 Elm St', 2, GETDATE(), GETDATE()),
-('user5', 'password5', 'David Brown', 'david.brown@example.com', '567-890-1234', '654 Cedar Ave', 2, GETDATE(), GETDATE())
-GO
-
-INSERT INTO Categories (cate_name,description,created_at,updated_at)
-VALUES 
-('Kaki', 'New Clothes here', GETDATE(), GETDATE()),
-('Trouser', 'New Clothes here', GETDATE(), GETDATE()),
-('Jean', 'New Clothes here', GETDATE(), GETDATE()),
-('Shirts', 'New Clothes here', GETDATE(), GETDATE()),
-('T-shirt', 'New Clothes here', GETDATE(), GETDATE())
-GO
-
-
-INSERT INTO Products (name,category_id,description,price,created_at,updated_at)
-VALUES
-('SHORT JEANS FAPAS', 1, 'Its inconvenient in the rainy season to wear long pants and get wet, so these shorts are a pretty appropriate choice. Basic jeans never go out of fashion when applied to shorts. With a slim-fit design with a youthful tone, this is definitely an item that most men own because of the comfortable and dynamic nature it always brings.', 10, GETDATE(), GETDATE()),
-('BIGSIZE - Men kaki pants big size 75 - 130kg in vertical form', 1, 'Specializing in bulk wholesale khaki pants, customers who want to buy retail, please inbox the shop for size advice', 12.5, GETDATE(), GETDATE()),
-('BIGSIZE - Men black kaki jeans jogger pants big size 80 - 130kg - Code KK36', 1, 'Its inconvenient in the rainy season to wear long pants and get wet, so these shorts are a pretty appropriate choice. Basic jeans never go out of fashion when applied to shorts. With a slim-fit design with a youthful tone, this is definitely an item that most men own because of the comfortable and dynamic nature it always brings.', 13.3, GETDATE(), GETDATE()),
-('BIGSIZE - kaki shorts with elastic waist in all colors', 1, 'We do not accept orders via notes, so please check the color, size, address with standard phone number before placing an order.', 10.8, GETDATE(), GETDATE()),
-('Fashionable kaki shorts navy blue', 1, 'Men khaki pants with many youthful colors are being chosen by many men to show their modern style.', 10, GETDATE(), GETDATE()),
-('Light gray trousers form-fit with elastic belt', 2, 'The fashion set with elegant colors and high-quality materials is a perfect suggestion for customers who pursue luxury and sophistication.', 16.2, GETDATE(), GETDATE()),
-('Quần tây thun nam forrm bigsize 85kg - 130kg', 2, 'Light stretch fabric makes it comfortable in all activities, soft fabric, no wrinkles, no color fading, little ruffles, little dust, keep shape.', 10.5, GETDATE(), GETDATE()),
-('Slim fit trousers with elastic belt for big size 75kg to 130kg', 2, 'The fashion set with elegant colors and high-quality materials is a perfect suggestion for customers who pursue luxury and sophistication.', 16.1, GETDATE(), GETDATE()),
-('Slim fit trousers with elastic belt standing tube form, rain cloth', 2, 'The fashion set with elegant colors and high-quality materials is a perfect suggestion for customers who pursue luxury and sophistication.', 12.4, GETDATE(), GETDATE()),
-('lim fit trousers', 2, 'The fashion set with elegant colors and high-quality materials is a perfect suggestion for customers who pursue luxury and sophistication.', 10.5, GETDATE(), GETDATE()),
-
-('Large size jeans, big size 80kg - 130kg', 3, 'Its inconvenient in the rainy season to wear long pants and get wet, so these shorts are a pretty appropriate choice. Basic jeans never go out of fashion when applied to shorts. With a slim-fit design with a youthful tone, this is definitely an item that most men own because of the comfortable and dynamic nature it always brings.', 11.5, GETDATE(), GETDATE()),
-('Black jean shorts big size 80 - 130kg', 3, 'Its inconvenient in the rainy season to wear long pants and get wet, so these shorts are a pretty appropriate choice. Basic jeans never go out of fashion when applied to shorts. With a slim-fit design with a youthful tone, this is definitely an item that most men own because of the comfortable and dynamic nature it always brings.', 11.7, GETDATE(), GETDATE()),
-('Black wash jeans with yin and yang big size 80 - 130kg', 3, 'High-end designer goods for stylish and elegant guys', 17.3, GETDATE(), GETDATE()),
-('Long jeans big size burnt gray, torn gray sz 80 - 130kg', 3, 'High-end designer goods for stylish and elegant guys', 12, GETDATE(), GETDATE()),
-('Jeans big size 80 - 130kg - black salt and pepper, black gray silver', 3, 'High-end designer goods for stylish and elegant guys', 10.5, GETDATE(), GETDATE()),
-
-('Short-sleeved shirt with big size print sz 70 - 130kg', 4, 'Fashion style with youthful design and personality, giving men confidence to show off their vibrant personality.', 10.5, GETDATE(), GETDATE()),
-('Short-sleeved shirt 50 - 100kg', 4, 'Fashion style with youthful design and personality, giving men confidence to show off their vibrant personality.', 11.8, GETDATE(), GETDATE()),
-('Short-sleeved shirt', 4, 'Fashion style with youthful design and personality, giving men confidence to show off their vibrant personality.', 9.8, GETDATE(), GETDATE()),
-('Short-sleeved shirt black salt and pepper', 4, 'Fashion style with youthful design and personality, giving men confidence to show off their vibrant personality.', 12.2, GETDATE(), GETDATE()),
-('Short-sleeved shirt black gray silver', 4, 'Fashion style with youthful design and personality, giving men confidence to show off their vibrant personality.', 11.5, GETDATE(), GETDATE()),
-
-('Short-sleeved T-shirt uniex bear', 5, 'Fashion style with youthful design and personality', 10.5, GETDATE(), GETDATE()),
-('Short-sleeved T-shirt uniex panda', 5, 'Fashion style with youthful design and personality', 11.8, GETDATE(), GETDATE()),
-('Short-sleeved T-shirt uniex dear', 5, 'Fashion style with youthful design and personality', 9.8, GETDATE(), GETDATE()),
-('Short-sleeved T-shirt uniex cat', 5, 'Fashion style with youthful design and personality', 12.2, GETDATE(), GETDATE()),
-('Short-sleeved T-shirt uniex dog', 5, 'Fashion style with youthful design and personality', 11.5, GETDATE(), GETDATE())
-GO
-
-INSERT INTO Product_Size(size_name,product_id,quantity,created_at,updated_at)
-VALUES
-('S', 1, 100, GETDATE(), GETDATE()),('M', 1, 52, GETDATE(), GETDATE()),('L', 1, 79, GETDATE(), GETDATE()),('XL', 1, 91, GETDATE(), GETDATE()),('S', 2, 200, GETDATE(), GETDATE()),('M', 2, 54, GETDATE(), GETDATE()),('L', 2, 78, GETDATE(), GETDATE()),('S', 3, 231, GETDATE(), GETDATE()),('M', 3, 124, GETDATE(), GETDATE()),('L', 3, 179, GETDATE(), GETDATE()),('S', 4, 10, GETDATE(), GETDATE()),('M', 4, 51, GETDATE(), GETDATE()),('L', 4, 72, GETDATE(), GETDATE()),('XL', 4, 95, GETDATE(), GETDATE()),('S', 5, 123, GETDATE(), GETDATE()),('M', 5, 53, GETDATE(), GETDATE()),('L', 5, 74, GETDATE(), GETDATE()),('XL', 5, 92, GETDATE(), GETDATE()),('S', 6, 123, GETDATE(), GETDATE()),('L', 6, 74, GETDATE(), GETDATE()),('XL', 6, 92, GETDATE(), GETDATE()),('S', 7, 123, GETDATE(), GETDATE()),('L', 7, 74, GETDATE(), GETDATE()),('XL', 7, 92, GETDATE(), GETDATE()),('S', 8, 123, GETDATE(), GETDATE()),('M', 8, 53, GETDATE(), GETDATE()),('S', 5, 123, GETDATE(), GETDATE()),('M', 5, 53, GETDATE(), GETDATE()),('L', 5, 74, GETDATE(), GETDATE()),('S', 6, 123, GETDATE(), GETDATE()),('M', 6, 53, GETDATE(), GETDATE()),('L', 6, 74, GETDATE(), GETDATE()),('XL', 6, 92, GETDATE(), GETDATE()),('S', 7, 123, GETDATE(), GETDATE()),('M', 7, 53, GETDATE(), GETDATE()),('L', 7, 74, GETDATE(), GETDATE()),('XL', 7, 92, GETDATE(), GETDATE()),('S', 8, 123, GETDATE(), GETDATE()),('M', 8, 53, GETDATE(), GETDATE()),('L', 8, 74, GETDATE(), GETDATE()),('S', 9, 123, GETDATE(), GETDATE()),('M', 9, 53, GETDATE(), GETDATE()),('L', 9, 74, GETDATE(), GETDATE()),('S', 10, 123, GETDATE(), GETDATE()),('M', 10, 53, GETDATE(), GETDATE()),('L', 10, 74, GETDATE(), GETDATE()),('S', 11, 123, GETDATE(), GETDATE()),('M', 11, 53, GETDATE(), GETDATE()),('L', 11, 74, GETDATE(), GETDATE()),('S', 12, 123, GETDATE(), GETDATE()),('M', 12, 53, GETDATE(), GETDATE()),('L', 12, 74, GETDATE(), GETDATE()),('S', 13, 123, GETDATE(), GETDATE()),('M', 13, 53, GETDATE(), GETDATE()),('L', 13, 74, GETDATE(), GETDATE()),('S', 14, 123, GETDATE(), GETDATE()),('M', 14, 53, GETDATE(), GETDATE()),('L', 14, 74, GETDATE(), GETDATE()),('S', 15, 123, GETDATE(), GETDATE()),('M', 15, 53, GETDATE(), GETDATE()),('L', 15, 74, GETDATE(), GETDATE()),('S', 16, 123, GETDATE(), GETDATE()),('M', 16, 53, GETDATE(), GETDATE()),('L', 16, 74, GETDATE(), GETDATE()),('S', 17, 123, GETDATE(), GETDATE()),('M', 17, 53, GETDATE(), GETDATE()),('L', 17, 74, GETDATE(), GETDATE()),('S', 18, 123, GETDATE(), GETDATE()),('M', 18, 53, GETDATE(), GETDATE()),('L', 18, 74, GETDATE(), GETDATE()),('S', 19, 123, GETDATE(), GETDATE()),('M', 19, 53, GETDATE(), GETDATE()),('L', 19, 74, GETDATE(), GETDATE()),('S', 20, 123, GETDATE(), GETDATE()),('M', 20, 53, GETDATE(), GETDATE()),('L', 20, 74, GETDATE(), GETDATE()),('S', 21, 123, GETDATE(), GETDATE()),('M', 21, 53, GETDATE(), GETDATE()),('L', 21, 74, GETDATE(), GETDATE()),('S', 22, 123, GETDATE(), GETDATE()),('M', 22, 53, GETDATE(), GETDATE()),('L', 22, 74, GETDATE(), GETDATE()),('S', 23, 123, GETDATE(), GETDATE()),('M', 23, 53, GETDATE(), GETDATE()),('L', 23, 74, GETDATE(), GETDATE()),('S', 24, 123, GETDATE(), GETDATE()),('M', 24, 53, GETDATE(), GETDATE()),('L', 24, 74, GETDATE(), GETDATE()),('S', 25, 123, GETDATE(), GETDATE()),('M', 25, 53, GETDATE(), GETDATE()),('L', 25, 74, GETDATE(), GETDATE())
-GO
-
-INSERT INTO ProductImages (product_id,image_url,created_at,updated_at)
-VALUES 
-(1,'desktop/img1.png',GETDATE(),GETDATE()),
-(2,'desktop/img2.png',GETDATE(),GETDATE()),
-(3,'desktop/img3.png',GETDATE(),GETDATE()),
-(4,'desktop/img4.png',GETDATE(),GETDATE()),
-(5,'desktop/img5.png',GETDATE(),GETDATE()),
-(6,'desktop/img6.png',GETDATE(),GETDATE()),
-(7,'desktop/img7.png',GETDATE(),GETDATE()),
-(8,'desktop/img8.png',GETDATE(),GETDATE()),
-(9,'desktop/img9.png',GETDATE(),GETDATE()),
-(10,'desktop/img10.png',GETDATE(),GETDATE()),
-(11,'desktop/img11.png',GETDATE(),GETDATE()),
-(12,'desktop/img12.png',GETDATE(),GETDATE()),
-(13,'desktop/img13.png',GETDATE(),GETDATE()),
-(14,'desktop/img14.png',GETDATE(),GETDATE()),
-(15,'desktop/img15.png',GETDATE(),GETDATE()),
-(16,'desktop/img16.png',GETDATE(),GETDATE()),
-(17,'desktop/img17.png',GETDATE(),GETDATE()),
-(18,'desktop/img18.png',GETDATE(),GETDATE()),
-(19,'desktop/img19.png',GETDATE(),GETDATE()),
-(20,'desktop/img20.png',GETDATE(),GETDATE()),
-(21,'desktop/img21.png',GETDATE(),GETDATE()),
-(22,'desktop/img22.png',GETDATE(),GETDATE()),
-(23,'desktop/img23.png',GETDATE(),GETDATE()),
-(24,'desktop/img24.png',GETDATE(),GETDATE()),
-(25,'desktop/img25.png',GETDATE(),GETDATE())
-GO
-
-
-INSERT INTO Order_Status
+INSERT INTO OrderStatus
 VALUES (N'Pending', N'When an order is created and has not been processed or confirmed by the customer.'),
 (N'Processing', N'When the order has been confirmed and is being processed by the store''s staff.'),
 (N'Shipped', N'Once the order has been packed and shipped to the carrier for delivery to the customer.'),
@@ -106,8 +17,552 @@ VALUES (N'Pending', N'When an order is created and has not been processed or con
 (N'Cancelled', N'When an order is canceled by a customer or store employee for some reason.')
 GO
 
-INSERT INTO Invoice_Status 
+INSERT INTO InvoiceStatus 
 VALUES (N'Pending', N'Unpaid or pending invoice.'), 
 (N'Paid', N' Invoice has been paid successfully.'),
 (N'Failed', N'Bill payment failed.')
 GO
+*/
+
+-- PRODUCT RELATED
+INSERT INTO Category (category_name, image_name)
+VALUES 
+(N'Shirt', 'shirt.jpg'),
+(N'Shorts', 'shorts.jpg'),
+(N'Jeans', 'jeans.jpg'),
+(N'Jacket', 'jacket.jpg'),
+(N'Hoodie, sweater & sweatshirt', 'hoodie.jpg'),
+(N'Tank top', 'tank_top.jpg'),
+(N'Underwear', 'underwear.jpg')
+GO
+
+INSERT INTO ProductBrand
+VALUES
+(N'Kilomet109'),
+(N'Subtle & Simple'),
+(N'The Blue T-Shirt'),
+(N'Vietcetera'),
+(N'Papaya')
+GO
+
+Insert Into ProductColor
+VALUES
+('White'), -- 1
+('Black'), -- 2
+('Yellow'), -- 3
+('Moss green'), -- 4: Xanh rêu
+('Dark Blue'), -- 5: Xanh đen
+('Terracotta'), -- 6: Cam đất
+('Brown'),-- 7: Nâu
+('Sky blue'), -- 8: Xanh da trời
+('Turquoise'), -- 9: Xanh bích
+('Gray'), -- Xám
+('Red')
+GO
+
+
+Insert Into ProductSize
+VALUES 
+(N'XL (65-75kg)'),
+(N'2XL (75-85kg)'),
+(N'3XL (85-100kg)'),
+(N'4XL (100-110kg)'),
+(N'5XL (110-120kg)'),
+(N'6XL (120-135kg), 1m8'), 
+(N'36 : 70-80kg'), -- 7
+(N'38 : 80-90kg'), -- 8
+(N'40 : 90-100kg'), -- 9
+(N'42 : 100-110kg'), -- 10
+(N'44 : 110-120kg'), -- 11
+(N'46 : 120-135kg') -- 12
+GO
+
+/*
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- SHIRT
+VALUES 
+(N'',
+N'', 20, 1, 1 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product1_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product1_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product1_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, , 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, , 10),
+	((SELECT IDENT_CURRENT('Product')), 6, , 15)
+	GO
+*/
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 1
+VALUES (
+N'(sale) Áo sơ mi caro tay dài nam bigsize 75kg - 105kg', 
+'CHỌN SIZE 
+Size 3x : 80-90kg
+Szie 4x : 90-100kg
+Size 5x : 100-110kg
+Size 6x : 110-120kg
+Size 7x : 120-130kg', 20.00, 1, 1 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product1_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product1_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product1_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 3, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 7, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 5, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 2
+VALUES 
+(N'Áo sơ mi nam tay dài thiêu ngựa from bigsize 80kg - 130kg - hình ngựa cổ viền BBR',
+N'Chọn size
+sz 2x : 80 -90kg
+sz 3x : 90 -100kg
+sz 4x : 100 - 110kg
+sz 5x : 110 - 120kg
+sz 6x : 120 - 130kg', 20, 1, 1 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product2_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product2_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product2_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 10)
+	GO
+INSERT INTO Product(product_name, [description], price, brand_id, category_id) -- SHIRT 3
+VALUES 
+(N'BIGSIZE - Áo sơ mi nam bigsize in hình form 80-130kg',
+N'Xuất xứ : Việt Nam
+Anh em nên inbox chiều cao cân nặng để tư vấn size cho chính xác
+Được hỗ trợ đổi trả nếu không ưng hoặc mặc không vừa,đổi trả miễn phí nếu lỗi do nhà bán hàng
+Size - 
+1x : 70-80kg ,bụng áo 56cm bề ngang
+2x : 80-90kg , bụng áo 58cm bề ngang
+3x : 90-100kg, bụng áo 60cm bề ngang
+4x : 100-110kg, bụng áo 62cm bề ngang
+5x : 110-120kg, bụng áo 64cm bề ngang
+6x : 120-130kg, bụng áo 66cm bề ngang
+7x : 130-140kg, bụng áo 72cm bề ngang', 30, 3, 1 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product3_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product3_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product3_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 5, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 6, 2, 10)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 4
+VALUES 
+(N'(bigsize) Áo sơ mi nam tay ngắn bigsize nhiều màu - 70-140kg',
+N'*** Chất liệu : KATE LỤA
+
+**** Hướng dẫn chọn size áo chính xác 99% bằng 1 trong 2 cách sau :
+Cách 1: cung cấp giúp shop số đo bề ngang bụng áo (áo đang mặc cảm thấy thoải mái nhất)
+Cách 2 : cung cấp giúp shop số đo vòng bụng trên body.
+NẾU thể sử dụng cách 1 và cách 2 vẫn còn Cách 3, chính xác 80%
+Cách 3 : cung cấp giúp shop chiều cao cân nặng.
+
+*** CHÍNH SÁCH ĐỔI TRẢ HÀNG QUẦN ÁO :
+- Đổi trả hàng trong vòng 7 ngày kể từ ngày nhận được hàng, hàng đổi trả phải còn nguyên tem mạc , không có mùi lạ, chưa có dấu hiệu đã qua sử dụng.  ', 15, 1, 1 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product4_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product4_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product4_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 10, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 5, 10)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 5
+VALUES 
+(N'BIGSIZE - Áo sơ mi nam tay ngắn có túi chất kate bố linen form bigsize 80kg - 130kg',
+N'Khách yêu lưu ý: BIGSIZE không nhận đặt hàng qua ghi chú, nên khách yêu kiểm tra màu size, địa chỉ với số điện thoại chuẩn trước khi đặt hàng nhé.
+Thêm nữa do chính sách toàn sàn Shopee không cho kiểm hàng trước khi thanh toán, nhưng nhà BIGSIZE hỗ trợ đổi trả trong vòng 7 ngày cho các sản phẩm không vừa size không giống mô tả hoặc lỗi từ nhà sản xuất
+Khách yêu yên tâm khi đặt hàng tại nhà BIGSIZE nha!!!
+HƯỚNG DẪN CHỌN SIZE Áo :
+Size 2x : 80kg - 90kg, ngang bụng áo 56cm bề ngang
+Size 3x : 90kg - 100kg, ngang bụng áo 58cm bề ngang
+Size 4x : 100kg - 110kg, ngang bụng áo 60cm bề ngang
+Size 5x : 110kg - 120kg, ngang bụng áo 63cm bề ngang
+Size 6x : 120kg - 130kg, ngang bụng áo 66cm bề ngang
+Ghi chú : Cân nặng đi theo size chỉ ướm chừng, khách ib chiều cao cân nặng để được tu vấn size phù hợp/ khách tự đo kích thước áo khách đang mặc cảm thấy thoải mái nhất để so sánh với kích thước áo shop đang mô tả để chọn size phù hợp với mình nhé !', 25, 1, 1 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product5_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product5_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product5_3.jpg'),
+	((SELECT IDENT_CURRENT('Product')), 'product5_4.jpg')
+
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 10, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 5, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 8, 15)
+	GO
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- Shorts 1
+VALUES 
+(N'(bigsize) Quần short thun nam lưng thun bigsize chất thun co giãn thoải mái màu đen trắng - 80-140kg',
+N' 
+-	Tên sản phẩm: Quần short thun cao cấp phong cách unisex dễ phối đồ 
+-	Chất liệu: Vải thun, dày dặn nhưng vẫn tạo cảm giác thoáng mát.  Tại sao ư?  Vải thun được dệt với các sợi đan chéo nhau, tạo nên những lỗ thoáng khí giúp người mặc cảm thấy thoải mái, ấm áp, nhưng vẫn không gây khó chịu cho làn da.
+-	Mặc đi tập gym, café, du lịch, mặc nhà đều ổn 
+-	Màu sắc: ĐEN,trắng cực dễ phối đồ, không sợ gây nóng bức, khó chịu.    
+BB Boiz đóng gói bằng túi zip cao cấp, sang trọng, đảm bảo được chất lượng sản phẩm đến tay khách hàng.
+
+-	Size 5:  cho người 80 - 90kg
+-	Size 6: cho người từ 90 - 100kg
+-	Size 7:  cho người từ 100 - 110kg
+-	Size 8:  cho người từ 110 - 120kg
+-	Size 9:  cho người từ 120 - 130kg
+-	Size 10:  cho người từ 130 - 140kg', 25, 2, 2) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product6_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product6_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product6_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 8, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, 2, 10)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- Shorts 2
+VALUES 
+(N'BIGSIZE - Quần short thun nam form bigsize 80kg - 130kg - in ARM',
+N'Quần short thun nam form bigsize 80kg - 130kg - in chữ UNDR phù hợp để đi tập thể dục một sản phẩm cực kì nổi bật của shop 
+
+CHỌN SIZE : 
+5x : 80 - 90kg
+6x : 90 - 100kg
+7x : 100 - 110kg
+8x : 110 - 120kg
+9x : 120 - 130kg
+Chất : thun', 30, 2, 2 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product7_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product7_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product7_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 7, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 8, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 9, 10, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- Shorts 3
+VALUES 
+(N'BIGSIZE - Quần short thun nam form bigsize 80kg - 130kg - in 3 sọc',
+N'Quần short thun nam form bigsize 80kg - 130kg - in chữ UNDR phù hợp để đi tập thể dục một sản phẩm cực kì nổi bật của shop 
+
+CHỌN SIZE : 
+5x : 80 - 90kg
+6x : 90 - 100kg
+7x : 100 - 110kg
+8x : 110 - 120kg
+9x : 120 - 130kg
+Chất : thun', 25, 2, 2 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product8_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product8_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product8_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 11, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	GO
+
+
+
+
+
+
+
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jeans
+VALUES 
+(N'Quần jean nam vải bền đẹp bigsize form quần đứng vừa vặn đủ màu - 80-130kg',
+N'ĐẶC ĐIỂM NỔI BẬT
+- Chất liệu vải bền, đẹp, không gây kích ứng da.
+- Form quần đứng, vừa vặn với cơ thể người mặc.
+- Quần jean dễ dàng phối hợp cùng áo phông, áo sơ mi, giày thể thao, giày lười…
+- Quần thích hợp mặc đi làm, đi chơi, tiệc tùng, sự kiện…', 49.99, 3, 3 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product9_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product9_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product9_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 8, 5, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, 8, 10),
+	((SELECT IDENT_CURRENT('Product')), 10, 2, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jeans
+VALUES 
+(N'Quần jean nam dài bigsize màu xanh trơn - 85-120kg',
+N'ĐẶC ĐIỂM NỔI BẬT
+- Chất liệu vải bền, đẹp, không gây kích ứng da.
+- Form quần đứng, vừa vặn với cơ thể người mặc.
+- Quần jean dễ dàng phối hợp cùng áo phông, áo sơ mi, giày thể thao, giày lười…
+- Quần thích hợp mặc đi làm, đi chơi, tiệc tùng, sự kiện…', 49.99, 3, 3 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product10_1.jpg') -- image_name
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 8, 8, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, 8, 10),
+	((SELECT IDENT_CURRENT('Product')), 10, 8, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jeans
+VALUES 
+(N'Quần jean dài nam bigsize màu đen ống đứng màu đen form 80-130kg',
+N'*** CHÍNH SÁCH ĐỔI TRẢ HÀNG QUẦN ÁO :
+- Đổi trả hàng trong vòng 7 ngày kể từ ngày nhận được hàng, hàng đổi trả phải còn nguyên tem mạc , không có mùi lạ, chưa có dấu hiệu đã qua sử dụng.', 49.99, 1, 3 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product11_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product11_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product11_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 7, 2, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 8, 2, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 10, 2, 15)
+	GO
+
+
+
+
+
+
+
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jacket
+VALUES 
+(N'Áo khoác dù 2 lớp nam mềm thoải mái bigsize khoá kéo chống nước đủ màu - 80-130kg',
+N'ĐẶC ĐIỂM NỔI BẬT: Áo khoác gió nam 2 lớp chống nước, chất gió tráng bạc
+- Áo khoác gió nam 2 lớp  nhẹ, mềm và thoải mái
+- Mặc đi nắng đi mưa đều phù hợp nhờ lớp ngoài cản gió, chống bám bụi, chống thấm nước giặt nhanh khô lại không bám bẩn.
+-Thiếu kế khoá kéo chống nước 
+- Áo khoác gió nam chống mưa có 3 màu trẻ trung: Rêu - Đen- Xanh than là những tone màu cực dễ phối đồ.', 99.99, 4, 4 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product12_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product12_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product12_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 5, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 4, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jacket
+VALUES 
+(N'Áo khoác dây kéo vải nỉ thời trang nam bigsize 90 - 130kg - IN CHỮ',
+N'** Chuyên sỉ số lượng lớn áo khoác nam, khách có nhu cầu mua lẻ vui lòng ib shop tư vấn sz nhé !
+*** Size :  
+Sz L 90 - 100kg 
+Sz XL 100 -110kg
+Sz 2XL 110 -120kg
+Sz 3XL 120 -130kg
+NỘI DUNG SẢN PHẨM:', 79.99, 4, 4 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product13_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product13_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product13_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 10, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 9, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jacket
+VALUES 
+(N'Áo khoác nam thời trang bigsize vải nỉ màu tối 90 - 130kg',
+N'- Đối với sản phẩm quần áo mới mua về, nên giặt tay lần đâu tiên để tránh phai màu sang quần áo khác
+- Khi giặt nên lộn mặt trái ra để đảm bảo độ bền 
+- Sản phẩm phù hợp cho giặt máy/giặt tay
+Anh em nên inbox chiều cao cân nặng để tư vấn size cho chính xác
+Được hỗ trợ đổi trả nếu không ưng hoặc mặc không vừa,đổi trả miễn phí nếu lỗi do nhà bán hàng ', 109.99, 4, 4 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product14_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product14_2.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	GO
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Hoodie 1
+VALUES 
+(N'Áo khoác hoodie nam bigsize in hình sz',
+N'Vải : nỉ
+Tem tag : do mỗi đợt hàng về có tem gì shop gắn tem đó, đợt hàng đầu gắn tem z a  r a nên lấy đi chup hình là tem z a r a , đợt sau này shop hết tem z a r a nên shop gắn tem NY, shop ghi chú giải thích ở đây để khách hàng khỏi thắc mắc ạ !
+- Sản phẩm chính là mẫu thiết kế mới nhất đơn giản 
+- Đem lại sự thoải mái tiện lợi nhất cho người mặc
+Hướng dẫn sử dụng:
+- Đối với sản phẩm quần áo mới mua về, nên giặt tay lần đâu tiên để tránh phai màu sang quần áo khác
+- Khi giặt nên lộn mặt trái ra để đảm bảo độ bền 
+- Sản phẩm phù hợp cho giặt máy/giặt tay', 59.99, 4, 5 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product15_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product15_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product15_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Hoodie 2
+VALUES 
+(N'Áo hoodie nam form bigsize 70kg - 130kg đen in chữ Cham pi',
+N'Chất : nỉ dày dặn, mặc đông ấm áp, thời trang', 79.99, 4, 5 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product16_1.jpg') -- image_name
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Hoodie 3
+VALUES 
+(N'BIGSIZE - Áo khoác hoodie BB - Boiz nam size lớn, bigsize 90kg - 130kg - ess',
+N'Hướng dẫn sử dụng sản phẩm Áo Khoắc thu đông 
+- Lần đầu đem về chỉ xả nước lạnh rồi phơi khô để đảm bảo chất in trên áo không bong tróc nhé
+- Chỉ giặt sau 3 ngày nhận áo
+- Nhớ lộn trái áo khi giặt và không giặt ngâm lâu quá 1 tiếng trong nước
+- Không sử dụng thuốc tẩy
+- Khi phơi lộn trái áo', 99.99, 4, 5 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product17_1.jpg') -- image_name
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 1, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 1, 15)
+	GO
+
+
+
+
+
+
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Tank top
+VALUES 
+(N'Áo thun nam ba lỗ sát nách form bigsize 90kg đến 140kg - xám in chữ AC & DC, Magictimes',
+N'Chất : thun lạnh 
+Thoáng mát
+Thích hợp mặc nhà, mặc chơi thể thao, tập gym, ...', 25, 5, 6 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product18_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product18_2.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 4, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 4, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 4, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Tank top
+VALUES 
+(N'Áo thun ba lỗ form bigsize men 80-130kg',
+N'Chất : cotton 100% 4 chiều co giãn, thấm hút mồ hôi.', 25, 5, 6 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product19_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product19_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product19_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 1, 10),
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 15),
+	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	GO
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Tank top
+VALUES 
+(N'Áo thun ba lỗ nam thể thao bigsize 6 màu áo ba lỗ 70 - 130kg',
+N'Xuất xứ : Việt Nam
+Anh em nên inbox chiều cao cân nặng để tư vấn size cho chính xác
+Được hỗ trợ đổi trả nếu không ưng hoặc mặc không vừa,đổi trả miễn phí nếu lỗi do nhà bán hàng', 30, 5, 6 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product20_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product20_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product20_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 5, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 9, 15)
+	GO
+
+
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Underware
+VALUES 
+(N'Quần lót boxer nam độ co dãn đàn hồi cực tốt bigsize quần lót nam thun cotton 4 chiều đủ màu - 80-140kg',
+N'* Quần lót Nam rất được khách hàng ưa chuộng vì đây là mẫu mới xuất hiện tại Việt Nam, khi vừa xuất hiện nó đã làm mưa làm gió vì chất lượng mang tới đáp ứng yêu cầu khách hàng.
+Thông tin: Quần lót nam thun cotton 4 chiều.
+* Độ co dãn, đàn hồi cực tốt
+* Kháng khuẩn, khử mùi, thấm hút mồ hôi và đặc biệt nhanh khô khi mặc chơi thể thao và vận động nhiều
+* Không màu nhuộm, ko chất gây hại
+* Không sổ lông, không bai nhão, mềm mịn
+* Size cho người từ 80-140kg 
+ * Màu sắc: 3 màu Xám-Đen-Trắng', 10, 5, 7 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product21_1.jpg'), -- image_name
+	((SELECT IDENT_CURRENT('Product')), N'product21_2.jpg'),
+	((SELECT IDENT_CURRENT('Product')), N'product21_3.jpg')
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 10, 15)
+	GO

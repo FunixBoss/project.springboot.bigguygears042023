@@ -1,5 +1,5 @@
 package com.project.entities;
-// Generated Apr 21, 2023, 8:44:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -27,50 +27,48 @@ import javax.persistence.TemporalType;
 public class Product implements java.io.Serializable {
 
 	private Integer productId;
-	private Brand brand;
 	private Category category;
-	private Serializable productName;
+	private ProductBrand productBrand;
+	private String productName;
 	private String description;
 	private BigDecimal price;
-	private int vendorId;
 	private Date createdAt;
 	private Date updatedAt;
-	private Set<ProductSize> productSizes = new HashSet<ProductSize>(0);
+	private Set<ProductReview> productReviews = new HashSet<ProductReview>(0);
+	private Set<ProductImage> productImages = new HashSet<ProductImage>(0);
+	private Set<ProductVariant> productVariants = new HashSet<ProductVariant>(0);
 	private Set<CartDetail> cartDetails = new HashSet<CartDetail>(0);
 	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(0);
-	private Set<Review> reviews = new HashSet<Review>(0);
-	private Set<ProductImage> productImages = new HashSet<ProductImage>(0);
 
 	public Product() {
 	}
 
-	public Product(Brand brand, Category category, Serializable productName, BigDecimal price, int vendorId,
+	public Product(Category category, ProductBrand productBrand, String productName, BigDecimal price,
 			Date createdAt, Date updatedAt) {
-		this.brand = brand;
 		this.category = category;
+		this.productBrand = productBrand;
 		this.productName = productName;
 		this.price = price;
-		this.vendorId = vendorId;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
 
-	public Product(Brand brand, Category category, Serializable productName, String description, BigDecimal price,
-			int vendorId, Date createdAt, Date updatedAt, Set<ProductSize> productSizes, Set<CartDetail> cartDetails,
-			Set<OrderDetail> orderDetails, Set<Review> reviews, Set<ProductImage> productImages) {
-		this.brand = brand;
+	public Product(Category category, ProductBrand productBrand, String productName, String description,
+			BigDecimal price, Date createdAt, Date updatedAt, Set<ProductReview> productReviews,
+			Set<ProductImage> productImages, Set<ProductVariant> productVariants, Set<CartDetail> cartDetails,
+			Set<OrderDetail> orderDetails) {
 		this.category = category;
+		this.productBrand = productBrand;
 		this.productName = productName;
 		this.description = description;
 		this.price = price;
-		this.vendorId = vendorId;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.productSizes = productSizes;
+		this.productReviews = productReviews;
+		this.productImages = productImages;
+		this.productVariants = productVariants;
 		this.cartDetails = cartDetails;
 		this.orderDetails = orderDetails;
-		this.reviews = reviews;
-		this.productImages = productImages;
 	}
 
 	@Id
@@ -86,16 +84,6 @@ public class Product implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "brand_id", nullable = false)
-	public Brand getBrand() {
-		return this.brand;
-	}
-
-	public void setBrand(Brand brand) {
-		this.brand = brand;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id", nullable = false)
 	public Category getCategory() {
 		return this.category;
@@ -105,12 +93,22 @@ public class Product implements java.io.Serializable {
 		this.category = category;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "brand_id", nullable = false)
+	public ProductBrand getProductBrand() {
+		return this.productBrand;
+	}
+
+	public void setProductBrand(ProductBrand productBrand) {
+		this.productBrand = productBrand;
+	}
+
 	@Column(name = "product_name", nullable = false)
 	public Serializable getProductName() {
 		return this.productName;
 	}
 
-	public void setProductName(Serializable productName) {
+	public void setProductName(String productName) {
 		this.productName = productName;
 	}
 
@@ -130,15 +128,6 @@ public class Product implements java.io.Serializable {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-	}
-
-	@Column(name = "vendor_id", nullable = false)
-	public int getVendorId() {
-		return this.vendorId;
-	}
-
-	public void setVendorId(int vendorId) {
-		this.vendorId = vendorId;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -162,12 +151,30 @@ public class Product implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-	public Set<ProductSize> getProductSizes() {
-		return this.productSizes;
+	public Set<ProductReview> getProductReviews() {
+		return this.productReviews;
 	}
 
-	public void setProductSizes(Set<ProductSize> productSizes) {
-		this.productSizes = productSizes;
+	public void setProductReviews(Set<ProductReview> productReviews) {
+		this.productReviews = productReviews;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+	public Set<ProductImage> getProductImages() {
+		return this.productImages;
+	}
+
+	public void setProductImages(Set<ProductImage> productImages) {
+		this.productImages = productImages;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+	public Set<ProductVariant> getProductVariants() {
+		return this.productVariants;
+	}
+
+	public void setProductVariants(Set<ProductVariant> productVariants) {
+		this.productVariants = productVariants;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
@@ -186,24 +193,6 @@ public class Product implements java.io.Serializable {
 
 	public void setOrderDetails(Set<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-	public Set<Review> getReviews() {
-		return this.reviews;
-	}
-
-	public void setReviews(Set<Review> reviews) {
-		this.reviews = reviews;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-	public Set<ProductImage> getProductImages() {
-		return this.productImages;
-	}
-
-	public void setProductImages(Set<ProductImage> productImages) {
-		this.productImages = productImages;
 	}
 
 }

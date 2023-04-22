@@ -1,5 +1,5 @@
 package com.project.entities;
-// Generated Apr 21, 2023, 8:44:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -33,15 +33,15 @@ public class Account implements java.io.Serializable {
 	private String fullName;
 	private String email;
 	private String phoneNumber;
-	private String imageUrl;
+	private String imageName;
 	private String address;
 	private Date createdAt;
 	private Date updatedAt;
-	private Set<Review> reviews = new HashSet<Review>(0);
 	private Set<Order> orders = new HashSet<Order>(0);
+	private Set<Cart> carts = new HashSet<Cart>(0);
+	private Set<ProductReview> productReviews = new HashSet<ProductReview>(0);
 	private Set<AccountCoupon> accountCoupons = new HashSet<AccountCoupon>(0);
 	private Set<Invoice> invoices = new HashSet<Invoice>(0);
-	private Set<Cart> carts = new HashSet<Cart>(0);
 
 	public Account() {
 	}
@@ -60,23 +60,23 @@ public class Account implements java.io.Serializable {
 	}
 
 	public Account(Role role, String username, String password, String fullName, String email, String phoneNumber,
-			String imageUrl, String address, Date createdAt, Date updatedAt, Set<Review> reviews, Set<Order> orders,
-			Set<AccountCoupon> accountCoupons, Set<Invoice> invoices, Set<Cart> carts) {
+			String imageName, String address, Date createdAt, Date updatedAt, Set<Order> orders, Set<Cart> carts,
+			Set<ProductReview> productReviews, Set<AccountCoupon> accountCoupons, Set<Invoice> invoices) {
 		this.role = role;
 		this.username = username;
 		this.password = password;
 		this.fullName = fullName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.imageUrl = imageUrl;
+		this.imageName = imageName;
 		this.address = address;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.reviews = reviews;
 		this.orders = orders;
+		this.carts = carts;
+		this.productReviews = productReviews;
 		this.accountCoupons = accountCoupons;
 		this.invoices = invoices;
-		this.carts = carts;
 	}
 
 	@Id
@@ -146,13 +146,13 @@ public class Account implements java.io.Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 
-	@Column(name = "image_url")
-	public String getImageUrl() {
-		return this.imageUrl;
+	@Column(name = "image_name")
+	public String getimageName() {
+		return this.imageName;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setimageName(String imageName) {
+		this.imageName = imageName;
 	}
 
 	@Column(name = "address", nullable = false)
@@ -185,21 +185,30 @@ public class Account implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
-	public Set<Review> getReviews() {
-		return this.reviews;
-	}
-
-	public void setReviews(Set<Review> reviews) {
-		this.reviews = reviews;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
 	public Set<Order> getOrders() {
 		return this.orders;
 	}
 
 	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
+	public Set<Cart> getCarts() {
+		return this.carts;
+	}
+
+	public void setCarts(Set<Cart> carts) {
+		this.carts = carts;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
+	public Set<ProductReview> getProductReviews() {
+		return this.productReviews;
+	}
+
+	public void setProductReviews(Set<ProductReview> productReviews) {
+		this.productReviews = productReviews;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
@@ -218,15 +227,6 @@ public class Account implements java.io.Serializable {
 
 	public void setInvoices(Set<Invoice> invoices) {
 		this.invoices = invoices;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
-	public Set<Cart> getCarts() {
-		return this.carts;
-	}
-
-	public void setCarts(Set<Cart> carts) {
-		this.carts = carts;
 	}
 
 }

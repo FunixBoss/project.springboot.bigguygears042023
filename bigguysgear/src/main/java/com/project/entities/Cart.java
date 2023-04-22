@@ -1,7 +1,9 @@
 package com.project.entities;
-// Generated Apr 21, 2023, 8:44:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +12,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,7 +28,7 @@ public class Cart implements java.io.Serializable {
 	private Account account;
 	private Date createdAt;
 	private Date updatedAt;
-	private CartDetail cartDetail;
+	private Set<CartDetail> cartDetails = new HashSet<CartDetail>(0);
 
 	public Cart() {
 	}
@@ -37,11 +39,11 @@ public class Cart implements java.io.Serializable {
 		this.updatedAt = updatedAt;
 	}
 
-	public Cart(Account account, Date createdAt, Date updatedAt, CartDetail cartDetail) {
+	public Cart(Account account, Date createdAt, Date updatedAt, Set<CartDetail> cartDetails) {
 		this.account = account;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.cartDetail = cartDetail;
+		this.cartDetails = cartDetails;
 	}
 
 	@Id
@@ -86,13 +88,13 @@ public class Cart implements java.io.Serializable {
 		this.updatedAt = updatedAt;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "cart")
-	public CartDetail getCartDetail() {
-		return this.cartDetail;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cart")
+	public Set<CartDetail> getCartDetails() {
+		return this.cartDetails;
 	}
 
-	public void setCartDetail(CartDetail cartDetail) {
-		this.cartDetail = cartDetail;
+	public void setCartDetails(Set<CartDetail> cartDetails) {
+		this.cartDetails = cartDetails;
 	}
 
 }

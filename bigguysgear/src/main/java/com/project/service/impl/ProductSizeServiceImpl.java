@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.entities.ProductSize;
-import com.project.entities.ProductSizeId;
 import com.project.repositories.ProductSizeRepository;
 import com.project.service.ProductSizeService;
 
@@ -22,7 +21,7 @@ public class ProductSizeServiceImpl implements ProductSizeService{
 	}
 
 	@Override
-	public ProductSize findById(ProductSizeId id) {
+	public ProductSize findById(Integer id) {
 		return productSizeRepository.findById(id).get();
 	}
 
@@ -32,7 +31,7 @@ public class ProductSizeServiceImpl implements ProductSizeService{
 	}
 
 	@Override
-	public Boolean delete(ProductSizeId id) {
+	public Boolean delete(Integer id) {
 		try {
 			productSizeRepository.deleteById(id);
 			return true;

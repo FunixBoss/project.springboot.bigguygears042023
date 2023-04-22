@@ -1,5 +1,5 @@
 package com.project.entities;
-// Generated Apr 21, 2023, 8:44:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.io.Serializable;
 import java.util.Date;
@@ -29,11 +29,11 @@ public class Coupon implements java.io.Serializable {
 	private CouponType couponType;
 	private String couponName;
 	private int discount;
-	private Serializable description;
+	private String description;
 	private Date createdAt;
 	private Date expiredAt;
-	private Set<AccountCoupon> accountCoupons = new HashSet<AccountCoupon>(0);
 	private Set<Order> orders = new HashSet<Order>(0);
+	private Set<AccountCoupon> accountCoupons = new HashSet<AccountCoupon>(0);
 
 	public Coupon() {
 	}
@@ -46,16 +46,16 @@ public class Coupon implements java.io.Serializable {
 		this.expiredAt = expiredAt;
 	}
 
-	public Coupon(CouponType couponType, String couponName, int discount, Serializable description, Date createdAt,
-			Date expiredAt, Set<AccountCoupon> accountCoupons, Set<Order> orders) {
+	public Coupon(CouponType couponType, String couponName, int discount, String description, Date createdAt,
+			Date expiredAt, Set<Order> orders, Set<AccountCoupon> accountCoupons) {
 		this.couponType = couponType;
 		this.couponName = couponName;
 		this.discount = discount;
 		this.description = description;
 		this.createdAt = createdAt;
 		this.expiredAt = expiredAt;
-		this.accountCoupons = accountCoupons;
 		this.orders = orders;
+		this.accountCoupons = accountCoupons;
 	}
 
 	@Id
@@ -103,7 +103,7 @@ public class Coupon implements java.io.Serializable {
 		return this.description;
 	}
 
-	public void setDescription(Serializable description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
@@ -128,21 +128,21 @@ public class Coupon implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
-	public Set<AccountCoupon> getAccountCoupons() {
-		return this.accountCoupons;
-	}
-
-	public void setAccountCoupons(Set<AccountCoupon> accountCoupons) {
-		this.accountCoupons = accountCoupons;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
 	public Set<Order> getOrders() {
 		return this.orders;
 	}
 
 	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
+	public Set<AccountCoupon> getAccountCoupons() {
+		return this.accountCoupons;
+	}
+
+	public void setAccountCoupons(Set<AccountCoupon> accountCoupons) {
+		this.accountCoupons = accountCoupons;
 	}
 
 }

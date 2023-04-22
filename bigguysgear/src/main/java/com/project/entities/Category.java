@@ -1,7 +1,6 @@
 package com.project.entities;
-// Generated Apr 21, 2023, 8:44:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +23,8 @@ import javax.persistence.TemporalType;
 public class Category implements java.io.Serializable {
 
 	private Integer categoryId;
-	private Serializable categoryName;
+	private String categoryName;
+	private String imageName;
 	private Date createdAt;
 	private Date updatedAt;
 	private Set<Product> products = new HashSet<Product>(0);
@@ -32,13 +32,14 @@ public class Category implements java.io.Serializable {
 	public Category() {
 	}
 
-	public Category(Serializable categoryName, Date createdAt, Date updatedAt) {
+	public Category(String categoryName, String imageName, Date createdAt, Date updatedAt) {
 		this.categoryName = categoryName;
+		this.imageName = imageName;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
 
-	public Category(Serializable categoryName, Date createdAt, Date updatedAt, Set<Product> products) {
+	public Category(String categoryName, Date createdAt, Date updatedAt, Set<Product> products) {
 		this.categoryName = categoryName;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
@@ -58,11 +59,11 @@ public class Category implements java.io.Serializable {
 	}
 
 	@Column(name = "category_name", nullable = false)
-	public Serializable getCategoryName() {
+	public String getCategoryName() {
 		return this.categoryName;
 	}
 
-	public void setCategoryName(Serializable categoryName) {
+	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
 
@@ -94,5 +95,13 @@ public class Category implements java.io.Serializable {
 	public void setProducts(Set<Product> products) {
 		this.products = products;
 	}
+	
+	@Column(name = "image_name", nullable = false, length = 200)
+	public String getimageName() {
+		return this.imageName;
+	}
 
+	public void setimageName(String imageName) {
+		this.imageName = imageName;
+	}
 }

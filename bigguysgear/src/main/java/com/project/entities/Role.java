@@ -1,5 +1,5 @@
 package com.project.entities;
-// Generated Apr 21, 2023, 8:44:48 PM by Hibernate Tools 4.3.6.Final
+// Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +19,6 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "Role", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
 public class Role implements java.io.Serializable {
-
 	private Integer roleId;
 	private String name;
 	private Set<Account> accounts = new HashSet<Account>(0);
