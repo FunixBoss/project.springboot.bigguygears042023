@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.ProductReview;
+import com.project.models.ProductReview;
 import com.project.repositories.ProductReviewRepository;
 import com.project.service.ProductReviewService;
 

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.PaymentMethod;
+import com.project.models.PaymentMethod;
 import com.project.repositories.PaymentMethodRepository;
 import com.project.service.PaymentMethodService;
 

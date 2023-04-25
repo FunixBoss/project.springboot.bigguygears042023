@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.OrderDetail;
+import com.project.models.OrderDetail;
 
 public interface OrderDetailService {
 	List<OrderDetail> findAll();

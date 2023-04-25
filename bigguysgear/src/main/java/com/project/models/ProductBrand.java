@@ -1,4 +1,4 @@
-package com.project.entities;
+package com.project.models;
 // Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.io.Serializable;
@@ -38,7 +38,6 @@ public class ProductBrand implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "brand_id", unique = true, nullable = false)
 	public Integer getBrandId() {
 		return this.brandId;
@@ -49,7 +48,7 @@ public class ProductBrand implements java.io.Serializable {
 	}
 
 	@Column(name = "brand_name", nullable = false)
-	public Serializable getBrandName() {
+	public String getBrandName() {
 		return this.brandName;
 	}
 

@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.OrderStatus;
+import com.project.models.OrderStatus;
 
 public interface OrderStatusService {
 	List<OrderStatus> findAll();

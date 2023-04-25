@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.Account;
+import com.project.models.Account;
 
 public interface AccountService {
 	List<Account> findAll();

@@ -1,4 +1,4 @@
-package com.project.entities;
+package com.project.models;
 // Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;

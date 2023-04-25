@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.OrderDetail;
+import com.project.models.OrderDetail;
 import com.project.repositories.OrderDetailRepository;
 import com.project.service.OrderDetailService;
 

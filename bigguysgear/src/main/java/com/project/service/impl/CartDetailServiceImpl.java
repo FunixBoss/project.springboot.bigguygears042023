@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.CartDetail;
+import com.project.models.CartDetail;
 import com.project.repositories.CartDetailRepository;
 import com.project.repositories.CartRepository;
 import com.project.service.CartDetailService;

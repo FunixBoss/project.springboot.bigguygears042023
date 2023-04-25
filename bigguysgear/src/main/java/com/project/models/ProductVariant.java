@@ -1,4 +1,4 @@
-package com.project.entities;
+package com.project.models;
 // Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
@@ -19,24 +19,23 @@ import javax.persistence.Table;
 public class ProductVariant implements java.io.Serializable {
 
 	private Integer variantId;
-	private Product product;
-	private ProductColor productColor;
+	private String color;
 	private ProductSize productSize;
 	private int quantity;
+	private Product product;
 
 	public ProductVariant() {
 	}
 
-	public ProductVariant(Product product, ProductColor productColor, ProductSize productSize, int quantity) {
+	public ProductVariant(Product product, String color, ProductSize productSize, int quantity) {
 		this.product = product;
-		this.productColor = productColor;
+		this.color = color;
 		this.productSize = productSize;
 		this.quantity = quantity;
 	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "variant_id", unique = true, nullable = false)
 	public Integer getVariantId() {
 		return this.variantId;
@@ -56,14 +55,13 @@ public class ProductVariant implements java.io.Serializable {
 		this.product = product;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "color_id", nullable = false)
-	public ProductColor getProductColor() {
-		return this.productColor;
+	@Column(name = "color", nullable = false, length = 50)
+	public String getColor() {
+		return this.color;
 	}
 
-	public void setProductColor(ProductColor productColor) {
-		this.productColor = productColor;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

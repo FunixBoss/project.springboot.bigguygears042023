@@ -2,8 +2,8 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.AccountCoupon;
-import com.project.entities.AccountCouponId;
+import com.project.models.AccountCoupon;
+import com.project.models.AccountCouponId;
 
 public interface AccountCouponService {
 	List<AccountCoupon> findAll();

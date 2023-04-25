@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.ProductImage;
+import com.project.models.ProductImage;
 import com.project.repositories.ProductImageRepository;
 import com.project.service.ProductImageService;
 

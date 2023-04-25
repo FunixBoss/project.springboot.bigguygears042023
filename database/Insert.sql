@@ -45,6 +45,7 @@ VALUES
 (N'Papaya')
 GO
 
+/*
 Insert Into ProductColor
 VALUES
 ('White'), -- 1
@@ -59,7 +60,7 @@ VALUES
 ('Gray'), -- Xám
 ('Red')
 GO
-
+*/
 
 Insert Into ProductSize
 VALUES 
@@ -89,7 +90,7 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product1_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, , 5), -- size_id, color_id, quantity
+	((SELECT IDENT_CURRENT('Product')), 4, , 5), -- size_id, color, quantity
 	((SELECT IDENT_CURRENT('Product')), 5, , 10),
 	((SELECT IDENT_CURRENT('Product')), 6, , 15)
 	GO
@@ -112,9 +113,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product1_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 3, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 7, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 5, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Yellow', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Brown', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Dark Blue', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 2
 VALUES 
@@ -132,8 +133,8 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product2_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 10)
+	((SELECT IDENT_CURRENT('Product')), 4, N'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Black', 10)
 	GO
 INSERT INTO Product(product_name, [description], price, brand_id, category_id) -- SHIRT 3
 VALUES 
@@ -156,8 +157,8 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product3_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 5, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 6, 2, 10)
+	((SELECT IDENT_CURRENT('Product')), 5, N'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 6, N'Black', 10)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 4
 VALUES 
@@ -179,8 +180,8 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product4_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 10, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 5, 10)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Gray', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Dark Blue', 10)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- SHIRT 5
 VALUES 
@@ -204,9 +205,9 @@ GO
 
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 10, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 5, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 8, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Gray', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Dark Blue', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Sky Blue', 15)
 	GO
 
 
@@ -242,8 +243,8 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product6_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 8, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 9, 2, 10)
+	((SELECT IDENT_CURRENT('Product')), 8, N'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, N'Black', 10)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- Shorts 2
 VALUES 
@@ -264,9 +265,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product7_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 7, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 8, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 9, 10, 15)
+	((SELECT IDENT_CURRENT('Product')), 7, N'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 8, N'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 9, N'Gray', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id)-- Shorts 3
 VALUES 
@@ -287,9 +288,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product8_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 11, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Red', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Black', 15)
 	GO
 
 
@@ -315,9 +316,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product9_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 8, 5, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 9, 8, 10),
-	((SELECT IDENT_CURRENT('Product')), 10, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 8, N'Dark Blue', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, N'Sky Blue', 10),
+	((SELECT IDENT_CURRENT('Product')), 10, N'Black', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jeans
 VALUES 
@@ -332,9 +333,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product10_1.jpg') -- image_name
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 8, 8, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 9, 8, 10),
-	((SELECT IDENT_CURRENT('Product')), 10, 8, 15)
+	((SELECT IDENT_CURRENT('Product')), 8, N'Sky Blue', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, N'Sky Blue', 10),
+	((SELECT IDENT_CURRENT('Product')), 10, N'Sky Blue', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jeans
 VALUES 
@@ -348,10 +349,10 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product11_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 7, 2, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 8, 2, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 9, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 10, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 7, N'Black', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 8, N'Black', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 9, N'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 10, N'Black', 15)
 	GO
 
 
@@ -377,9 +378,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product12_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 5, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 4, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Black', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Moss Green', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Moss Green', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jacket
 VALUES 
@@ -398,9 +399,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product13_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 10, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 9, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Gray', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Turquoise', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Jacket
 VALUES 
@@ -416,9 +417,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product14_2.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Black', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Black', 15)
 	GO
 
 
@@ -449,9 +450,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product15_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Black', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Black', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Hoodie 2
 VALUES 
@@ -462,9 +463,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product16_1.jpg') -- image_name
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 2, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Black', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Black', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Hoodie 3
 VALUES 
@@ -480,9 +481,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product17_1.jpg') -- image_name
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 1, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 1, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'White', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'White', 15)
 	GO
 
 
@@ -504,9 +505,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product18_2.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 4, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 4, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 4, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, N'Moss Green', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, N'Moss Green', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, N'Moss Green', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Tank top
 VALUES 
@@ -519,10 +520,10 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product19_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 1, 10),
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 15),
-	((SELECT IDENT_CURRENT('Product')), 6, 2, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, 'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 'White', 10),
+	((SELECT IDENT_CURRENT('Product')), 5, 'Black', 15),
+	((SELECT IDENT_CURRENT('Product')), 6, 'Black', 15)
 	GO
 INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Tank top
 VALUES 
@@ -537,9 +538,9 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product20_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 5, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 9, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, 'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 'Dark Blue', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 'Turquoise', 15)
 	GO
 
 
@@ -562,7 +563,29 @@ GO
 	((SELECT IDENT_CURRENT('Product')), N'product21_3.jpg')
 	GO
 	INSERT INTO ProductVariant VALUES
-	((SELECT IDENT_CURRENT('Product')), 4, 1, 5), -- size_id, color_id, quantity
-	((SELECT IDENT_CURRENT('Product')), 5, 2, 10),
-	((SELECT IDENT_CURRENT('Product')), 6, 10, 15)
+	((SELECT IDENT_CURRENT('Product')), 4, 'White', 5), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 'Black', 10),
+	((SELECT IDENT_CURRENT('Product')), 6, 'Gray', 15)
 	GO
+
+INSERT INTO Product (product_name, [description], price, brand_id, category_id) -- Underware
+VALUES 
+(N'Quần lót boxer nam ',
+N'* Quần lót Nam rất được khách hàng ưa chuộng vì đây là mẫu mới xuất hiện tại Việt Nam, khi vừa xuất hiện nó đã làm mưa làm gió vì chất lượng mang tới đáp ứng yêu cầu khách hàng.
+Thông tin: Quần lót nam thun cotton 4 chiều.
+* Độ co dãn, đàn hồi cực tốt
+* Kháng khuẩn, khử mùi, thấm hút mồ hôi và đặc biệt nhanh khô khi mặc chơi thể thao và vận động nhiều
+* Không màu nhuộm, ko chất gây hại
+* Không sổ lông, không bai nhão, mềm mịn
+* Size cho người từ 80-140kg 
+ * Màu sắc: 3 màu Xám-Đen-Trắng', 10, 5, 7 ) -- name, desciption, pice, brand_id, cate_id
+GO
+	INSERT INTO ProductImage VALUES 
+	((SELECT IDENT_CURRENT('Product')), N'product21_2.jpg') -- image_name
+	GO
+	INSERT INTO ProductVariant VALUES
+	((SELECT IDENT_CURRENT('Product')), 4, 'White', 0), -- size_id, color, quantity
+	((SELECT IDENT_CURRENT('Product')), 5, 'Black', 0),
+	((SELECT IDENT_CURRENT('Product')), 6, 'Gray', 0)
+	GO
+

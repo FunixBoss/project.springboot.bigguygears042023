@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.PaymentMethod;
+import com.project.models.PaymentMethod;
 
 public interface PaymentMethodService {
 	List<PaymentMethod> findAll();

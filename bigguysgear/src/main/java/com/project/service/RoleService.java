@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.Role;
+import com.project.models.Role;
 
 public interface RoleService {
 	List<Role> findAll();

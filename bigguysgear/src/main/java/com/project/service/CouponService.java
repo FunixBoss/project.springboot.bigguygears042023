@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.Coupon;
+import com.project.models.Coupon;
 
 public interface CouponService {
 	List<Coupon> findAll();

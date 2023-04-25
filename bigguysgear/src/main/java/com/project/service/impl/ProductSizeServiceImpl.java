@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.ProductSize;
+import com.project.models.ProductSize;
 import com.project.repositories.ProductSizeRepository;
 import com.project.service.ProductSizeService;
 

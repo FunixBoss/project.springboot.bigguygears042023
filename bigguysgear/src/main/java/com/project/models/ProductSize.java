@@ -1,4 +1,4 @@
-package com.project.entities;
+package com.project.models;
 // Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
@@ -20,17 +20,17 @@ import javax.persistence.Table;
 public class ProductSize implements java.io.Serializable {
 
 	private Integer sizeId;
-	private int sizeName;
+	private String sizeName;
 	private Set<ProductVariant> productVariants = new HashSet<ProductVariant>(0);
 
 	public ProductSize() {
 	}
 
-	public ProductSize(int sizeName) {
+	public ProductSize(String sizeName) {
 		this.sizeName = sizeName;
 	}
 
-	public ProductSize(int sizeName, Set<ProductVariant> productVariants) {
+	public ProductSize(String sizeName, Set<ProductVariant> productVariants) {
 		this.sizeName = sizeName;
 		this.productVariants = productVariants;
 	}
@@ -48,11 +48,11 @@ public class ProductSize implements java.io.Serializable {
 	}
 
 	@Column(name = "size_name", nullable = false)
-	public int getSizeName() {
+	public String getSizeName() {
 		return this.sizeName;
 	}
 
-	public void setSizeName(int sizeName) {
+	public void setSizeName(String sizeName) {
 		this.sizeName = sizeName;
 	}
 

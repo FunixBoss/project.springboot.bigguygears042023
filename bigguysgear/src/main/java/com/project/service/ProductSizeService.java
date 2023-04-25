@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.ProductSize;
+import com.project.models.ProductSize;
 
 public interface ProductSizeService {
 	List<ProductSize> findAll();

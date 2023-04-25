@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.Order;
+import com.project.models.Order;
 
 public interface OrderService {
 	List<Order> findAll();

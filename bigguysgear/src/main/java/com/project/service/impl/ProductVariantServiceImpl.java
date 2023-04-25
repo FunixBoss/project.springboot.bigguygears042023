@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.ProductVariant;
+import com.project.models.ProductVariant;
 import com.project.repositories.ProductVariantRepository;
 import com.project.service.ProductVariantService;
 

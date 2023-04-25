@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.ProductImage;
+import com.project.models.ProductImage;
 
 public interface ProductImageService {
 	List<ProductImage> findAll();

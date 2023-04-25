@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.ProductBrand;
+import com.project.models.ProductBrand;
 
 public interface ProductBrandService {
 	List<ProductBrand> findAll();

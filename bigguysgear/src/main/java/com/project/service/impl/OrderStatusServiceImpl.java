@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.OrderStatus;
+import com.project.models.OrderStatus;
 import com.project.repositories.OrderStatusRepository;
 import com.project.service.OrderStatusService;
 

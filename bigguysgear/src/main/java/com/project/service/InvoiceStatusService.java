@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.InvoiceStatus;
+import com.project.models.InvoiceStatus;
 
 public interface InvoiceStatusService {
 	List<InvoiceStatus> findAll();

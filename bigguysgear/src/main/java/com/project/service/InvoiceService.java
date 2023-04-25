@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.Invoice;
+import com.project.models.Invoice;
 
 public interface InvoiceService {
 	List<Invoice> findAll();

@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.ProductVariant;
+import com.project.models.ProductVariant;
 
 public interface ProductVariantService {
 	List<ProductVariant> findAll();

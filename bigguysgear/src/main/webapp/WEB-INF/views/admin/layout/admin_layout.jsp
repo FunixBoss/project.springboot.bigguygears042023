@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
+	
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -8,10 +11,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <script src="${pageContext.request.contextPath}/resources/admin/assets/js/vendors/jquery-3.6.0.min.js"></script>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/admin/assets/imgs/theme/favicon.svg">
     <!-- Template CSS -->
@@ -42,8 +43,8 @@
                         <span class="text">Products</span>
                     </a>
                     <div class="submenu">
-                        <a href="/admin/product">Product List</a>
-                        <a href="/admin/product/product-grid">Product Grid</a>
+                        <a href="/admin/product?page=1">Product List</a>
+                        <a href="/admin/product/product-grid?page=1">Product Grid</a>
                         <a href="/admin/product/add">Add a Product</a>
                         <a href="/admin/product/category">Categories</a>
                         <a href="/admin/product/brand">Brands</a>
@@ -145,7 +146,7 @@
 	
 	    // Loop through each link and add the "active" class if its href matches the current page URL
 	    links.forEach(link => {
-	      if (link.getAttribute('href') === currentUrl) {
+	      if (link.getAttribute('href').indexOf(currentUrl) > -1) {
 	        link.closest("li").classList.add('active');
 	      } else {
 		    link.parentElement.classList.remove('active');

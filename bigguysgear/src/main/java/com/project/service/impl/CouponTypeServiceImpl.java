@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.CouponType;
+import com.project.models.CouponType;
 import com.project.repositories.CouponTypeRepository;
 import com.project.service.CouponTypeService;
 

@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.entities.AccountCoupon;
-import com.project.entities.AccountCouponId;
+import com.project.models.AccountCoupon;
+import com.project.models.AccountCouponId;
 import com.project.repositories.AccountCouponRepository;
 import com.project.service.AccountCouponService;
 

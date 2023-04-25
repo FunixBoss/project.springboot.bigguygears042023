@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.CartDetail;
+import com.project.models.CartDetail;
 
 public interface CartDetailService {
 	List<CartDetail> findAll();

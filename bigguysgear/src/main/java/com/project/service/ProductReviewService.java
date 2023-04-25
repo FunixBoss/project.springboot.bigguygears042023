@@ -2,7 +2,7 @@ package com.project.service;
 
 import java.util.List;
 
-import com.project.entities.ProductReview;
+import com.project.models.ProductReview;
 
 public interface ProductReviewService {
 	List<ProductReview> findAll();

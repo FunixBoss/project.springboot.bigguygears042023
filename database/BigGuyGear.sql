@@ -30,8 +30,9 @@ CREATE TABLE Account (
   created_at DATETIME NOT NULL DEFAULT GETDATE(),
   updated_at DATETIME NOT NULL DEFAULT GETDATE(),
   FOREIGN KEY (role_id) REFERENCES [Role](role_id),
-
 )
+
+
 
 -- PRODUCT RELATED -- 
 DROP TABLE IF EXISTS Category
@@ -54,13 +55,6 @@ CREATE TABLE ProductBrand (
 )
 GO
 
-DROP TABLE IF EXISTS ProductColor
-CREATE TABLE ProductColor (
-	color_id INT PRIMARY KEY IDENTITY,
-	color_name NVARCHAR(50) NOT NULL
-)
-GO
-
 DROP TABLE IF EXISTS ProductSize
 CREATE TABLE ProductSize (
   size_id INT PRIMARY KEY IDENTITY,
@@ -72,7 +66,7 @@ DROP TABLE IF EXISTS Product
 CREATE TABLE Product (
   product_id INT PRIMARY KEY IDENTITY,
   product_name NVARCHAR(200) NOT NULL,
-  [description] TEXT,
+  [description] NVARCHAR(1000),
   price DECIMAL(18, 2) NOT NULL,
   brand_id INT NOT NULL,
   category_id INT NOT NULL,
@@ -97,11 +91,10 @@ CREATE TABLE ProductVariant (
 variant_id INT PRIMARY KEY IDENTITY,
 product_id INT NOT NULL,
 size_id INT NOT NULL,
-color_id INT NOT NULL,
+color NVARCHAR(50),
 quantity INT NOT NULL,
 FOREIGN KEY (product_id) REFERENCES Product(product_id),
 FOREIGN KEY (size_id) REFERENCES ProductSize(size_id),
-FOREIGN KEY (color_id) REFERENCES ProductColor(color_id)
 )
 GO
 

@@ -1,4 +1,4 @@
-package com.project.entities;
+package com.project.models;
 // Generated Apr 22, 2023, 11:44:21 AM by Hibernate Tools 4.3.6.Final
 
 import java.util.Date;
@@ -48,7 +48,6 @@ public class Cart implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "cart_id", unique = true, nullable = false)
 	public Integer getCartId() {
 		return this.cartId;
@@ -89,12 +88,20 @@ public class Cart implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cart")
-	public Set<CartDetail> getCartDetails() {
+	public Set<CartDetail> getCartDetails() { 
 		return this.cartDetails;
 	}
 
 	public void setCartDetails(Set<CartDetail> cartDetails) {
 		this.cartDetails = cartDetails;
 	}
+
+	@Override
+	public String toString() {
+		return "Cart [cartId=" + cartId + ", account=" + account + ", createdAt=" + createdAt + ", updatedAt="
+				+ updatedAt + ", cartDetails=" + cartDetails + "]";
+	}
+	
+	
 
 }

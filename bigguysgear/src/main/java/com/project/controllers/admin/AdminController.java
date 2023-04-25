@@ -15,7 +15,7 @@ import com.project.service.ProductService;
 @RequestMapping({"admin"})
 public class AdminController { 
 	
-	@GetMapping({"", "dashboard"})
+	@GetMapping({"dashboard"})
 	public String index(ModelMap modelMap) {
 		modelMap.addAttribute("title", "Dashboard");
 		modelMap.addAttribute("page", "../admin/dashboard.jsp");
